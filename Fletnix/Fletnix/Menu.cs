@@ -16,5 +16,15 @@ namespace Fletnix
         {
             InitializeComponent();
         }
+
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_sair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

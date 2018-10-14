@@ -33,6 +33,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_sair = new System.Windows.Forms.Button();
+            this.btn_add = new System.Windows.Forms.Button();
+            this.btn_listar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +46,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.btn_listar);
+            this.panel1.Controls.Add(this.btn_add);
             this.panel1.Controls.Add(this.btn_sair);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
@@ -54,13 +58,39 @@
             // 
             this.btn_sair.Image = ((System.Drawing.Image)(resources.GetObject("btn_sair.Image")));
             this.btn_sair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_sair.Location = new System.Drawing.Point(221, 3);
+            this.btn_sair.Location = new System.Drawing.Point(236, 3);
             this.btn_sair.Name = "btn_sair";
-            this.btn_sair.Size = new System.Drawing.Size(63, 23);
+            this.btn_sair.Size = new System.Drawing.Size(48, 23);
             this.btn_sair.TabIndex = 3;
             this.btn_sair.Text = "Sair";
+            this.btn_sair.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_sair.UseVisualStyleBackColor = true;
             this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
+            // 
+            // btn_add
+            // 
+            this.btn_add.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.Image")));
+            this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_add.Location = new System.Drawing.Point(3, 3);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(76, 23);
+            this.btn_add.TabIndex = 4;
+            this.btn_add.Text = "Adicionar";
+            this.btn_add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_add.UseVisualStyleBackColor = true;
+            // 
+            // btn_listar
+            // 
+            this.btn_listar.Image = ((System.Drawing.Image)(resources.GetObject("btn_listar.Image")));
+            this.btn_listar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_listar.Location = new System.Drawing.Point(85, 3);
+            this.btn_listar.Name = "btn_listar";
+            this.btn_listar.Size = new System.Drawing.Size(59, 23);
+            this.btn_listar.TabIndex = 5;
+            this.btn_listar.Text = "Listar";
+            this.btn_listar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_listar.UseVisualStyleBackColor = true;
+            this.btn_listar.Click += new System.EventHandler(this.btn_listar_Click);
             // 
             // Menu
             // 
@@ -80,5 +110,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_sair;
+        private System.Windows.Forms.Button btn_listar;
+        private System.Windows.Forms.Button btn_add;
     }
 }

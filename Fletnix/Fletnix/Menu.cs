@@ -26,5 +26,11 @@ namespace Fletnix
         {
             Application.Exit();
         }
+
+        private void btn_listar_Click(object sender, EventArgs e)
+        {
+            Listar _listar = new Listar();
+            _listar.ShowDialog();
+        }
     }
 }

@@ -27,5 +27,11 @@ namespace Fletnix
             }
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Ver visu = new Ver();
+            visu.ShowDialog();
+        }
     }
 }

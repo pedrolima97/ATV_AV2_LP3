@@ -19,12 +19,6 @@ namespace Fletnix
 
         private void Listar_Load(object sender, EventArgs e)
         {
-            SingletonBD obj = SingletonBD.getInstance;
-            if (obj != null)
-            {
-                obj.Buscar();
-                MessageBox.Show("Busca OK");
-            }
             
         }
 

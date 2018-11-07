@@ -33,12 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.6.9.12\lib\net45\MySql.Data.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.13\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,50 +59,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formulários\Cadastrar.cs">
+    <Compile Include="Dados\DAO_conn.cs" />
+    <Compile Include="Formularios\Cadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulários\Cadastrar.Designer.cs">
+    <Compile Include="Formularios\Cadastrar.Designer.cs">
       <DependentUpon>Cadastrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulários\Editar.cs">
+    <Compile Include="Formularios\Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulários\Editar.Designer.cs">
+    <Compile Include="Formularios\Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulários\Listar.cs">
+    <Compile Include="Formularios\Listar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulários\Listar.Designer.cs">
+    <Compile Include="Formularios\Listar.Designer.cs">
       <DependentUpon>Listar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulários\Menu.cs">
+    <Compile Include="Formularios\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulários\Menu.Designer.cs">
+    <Compile Include="Formularios\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcoes\BuscaBD.cs" />
+    <Compile Include="Funcoes\DeleteBD.cs" />
+    <Compile Include="Funcoes\InsertBD.cs" />
+    <Compile Include="Funcoes\ReaderDGV.cs" />
+    <Compile Include="Funcoes\FilmeSerie.cs" />
+    <Compile Include="Funcoes\UpdateBD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Funções\Remover.cs" />
-    <Compile Include="Funções\SingletonBD.cs" />
-    <Compile Include="Formulários\Splash.cs">
+    <Compile Include="Formularios\Splash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulários\Splash.Designer.cs">
+    <Compile Include="Formularios\Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulários\Ver.cs">
+    <Compile Include="Formularios\Ver.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulários\Ver.Designer.cs">
+    <Compile Include="Formularios\Ver.Designer.cs">
       <DependentUpon>Ver.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Formulários\Listar.resx">
+    <EmbeddedResource Include="Formularios\Listar.resx">
       <DependentUpon>Listar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulários\Menu.resx">
+    <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -105,10 +119,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Formulários\Splash.resx">
+    <EmbeddedResource Include="Formularios\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulários\Ver.resx">
+    <EmbeddedResource Include="Formularios\Ver.resx">
       <DependentUpon>Ver.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -125,9 +139,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dados\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

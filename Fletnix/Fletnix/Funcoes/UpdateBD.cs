@@ -11,8 +11,7 @@ namespace Fletnix.Funcoes
     {
         static public void Update(string cod_tittle, string tipo)
         {
-            FilmeSerie tittle = new FilmeSerie();
-            using (MySqlConnection connecta = Dados.DAO_conn.getSqlConnection())
+                using (MySqlConnection connecta = Dados.DAO_conn.getSqlConnection())
                 try
                 {
                     string table = "";
@@ -27,9 +26,17 @@ namespace Fletnix.Funcoes
                         table = "filmes";
                     }
 
-                    string InsComand = "UPDATE " + table + " SET cod_titulo = '" + tittle.Cod + "', titulo = '" + tittle.Nome + "'," +
-                        "produtora = '" + tittle.Produtora + "', genero = '" + tittle.Genero + "', sinopse = '" + tittle.Sinopse + "'," +
-                        "duracao =  '" + tittle.Duracao + "', lancamento = '" + tittle.Lancamento + "', direcao = '" + tittle.Direcao + " WHERE cod_titulo = '" + cod_tittle + "'";
+                    string Titulo = Dados.FilmeSerie.tittle.Titulo;
+                    string Produtora = Dados.FilmeSerie.tittle.Produtora;
+                    string Genero = Dados.FilmeSerie.tittle.Genero;
+                    string Sinopse = Dados.FilmeSerie.tittle.Sinopse;
+                    string Duracao = Dados.FilmeSerie.tittle.Duracao;
+                    int Lancamento = Dados.FilmeSerie.tittle.Lancamento;
+                    string Direcao = Dados.FilmeSerie.tittle.Direcao;
+
+                    string InsComand = "UPDATE " + table + " SET titulo = '" + Titulo + "', produtora = '" + Produtora + "', genero = '" + Genero +
+                    "', sinopse = '" + Sinopse + "', duracao =  '" + Duracao + "', lancamento = '" + Lancamento +
+                    "', direcao = '" + Direcao + " WHERE cod_titulo = '" + cod_tittle + "'";
                     MySqlCommand updatee = new MySqlCommand(InsComand, connecta);
                     updatee.ExecuteNonQuery();
                 }

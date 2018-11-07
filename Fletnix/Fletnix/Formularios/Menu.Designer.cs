@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_sair = new System.Windows.Forms.Button();
-            this.btn_add = new System.Windows.Forms.Button();
             this.btn_listar = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.btn_sair = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -43,22 +43,25 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // panel1
+            // btn_listar
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Controls.Add(this.btn_listar);
-            this.panel1.Controls.Add(this.btn_add);
-            this.panel1.Controls.Add(this.btn_sair);
-            this.panel1.Location = new System.Drawing.Point(-1, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(287, 30);
-            this.panel1.TabIndex = 2;
+            this.btn_listar.Font = new System.Drawing.Font("Montserrat", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_listar.Image = ((System.Drawing.Image)(resources.GetObject("btn_listar.Image")));
+            this.btn_listar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_listar.Location = new System.Drawing.Point(217, 235);
+            this.btn_listar.Name = "btn_listar";
+            this.btn_listar.Size = new System.Drawing.Size(112, 34);
+            this.btn_listar.TabIndex = 5;
+            this.btn_listar.Text = "Listar Títulos";
+            this.btn_listar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_listar.UseVisualStyleBackColor = true;
+            this.btn_listar.Click += new System.EventHandler(this.btn_listar_Click);
             // 
             // btn_sair
             // 
             this.btn_sair.Image = ((System.Drawing.Image)(resources.GetObject("btn_sair.Image")));
             this.btn_sair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_sair.Location = new System.Drawing.Point(236, 3);
+            this.btn_sair.Location = new System.Drawing.Point(290, 2);
             this.btn_sair.Name = "btn_sair";
             this.btn_sair.Size = new System.Drawing.Size(48, 23);
             this.btn_sair.TabIndex = 3;
@@ -67,50 +70,50 @@
             this.btn_sair.UseVisualStyleBackColor = true;
             this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
             // 
-            // btn_add
+            // pictureBox1
             // 
-            this.btn_add.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.Image")));
-            this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add.Location = new System.Drawing.Point(3, 3);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(76, 23);
-            this.btn_add.TabIndex = 4;
-            this.btn_add.Text = "Adicionar";
-            this.btn_add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_add.UseVisualStyleBackColor = true;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-29, -27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(301, 287);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
-            // btn_listar
+            // label1
             // 
-            this.btn_listar.Image = ((System.Drawing.Image)(resources.GetObject("btn_listar.Image")));
-            this.btn_listar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_listar.Location = new System.Drawing.Point(85, 3);
-            this.btn_listar.Name = "btn_listar";
-            this.btn_listar.Size = new System.Drawing.Size(59, 23);
-            this.btn_listar.TabIndex = 5;
-            this.btn_listar.Text = "Listar";
-            this.btn_listar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_listar.UseVisualStyleBackColor = true;
-            this.btn_listar.Click += new System.EventHandler(this.btn_listar_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 271);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 19);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "FLETNIX 2.5.0-22";
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(341, 299);
             this.ControlBox = false;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_sair);
+            this.Controls.Add(this.btn_listar);
+            this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Menu";
             this.Text = "Menu";
-            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_sair;
         private System.Windows.Forms.Button btn_listar;
-        private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

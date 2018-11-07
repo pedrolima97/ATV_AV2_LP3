@@ -11,25 +11,34 @@ namespace Fletnix.Funcoes
     {
         static public void Insert()
         {
-            FilmeSerie tittle = new FilmeSerie();
-            using (MySqlConnection connecta = Dados.DAO_conn.getSqlConnection())
+                using (MySqlConnection connecta = Dados.DAO_conn.getSqlConnection())
                 try
                 {
+                    string Tipo = Dados.FilmeSerie.tittle.Tipo;
                     string table = "";
                     connecta.Open();
-                    if (tittle.Tipo == "serie")
+                    if (Tipo == "serie")
                     {
                         table = "series";
                     }
 
-                    else if (tittle.Tipo == "filme")
+                    else if (Tipo == "filme")
                     {
                         table = "filmes";
                     }
 
+                    string Cod = Dados.FilmeSerie.tittle.Cod;
+                    string Titulo = Dados.FilmeSerie.tittle.Titulo;
+                    string Produtora = Dados.FilmeSerie.tittle.Produtora;
+                    string Genero = Dados.FilmeSerie.tittle.Genero;
+                    string Sinopse = Dados.FilmeSerie.tittle.Sinopse;
+                    string Duracao = Dados.FilmeSerie.tittle.Duracao;
+                    int Lancamento = Dados.FilmeSerie.tittle.Lancamento;
+                    string Direcao = Dados.FilmeSerie.tittle.Direcao;
+
                     string InsComand = "INSERT INTO " + table + " (cod_titulo ,titulo, produtora, genero, sinopse, duracao, lancamento, direcao)" +
-                        "VALUES('" + tittle.Cod + "','" + tittle.Nome + "','" + tittle.Produtora + "','" + tittle.Genero + "','" + tittle.Sinopse +
-                        "', '" + tittle.Duracao + "', '" + tittle.Lancamento + "', '" + tittle.Direcao + "'";
+                        "VALUES('" + Cod + "','" + Titulo + "','" + Produtora + "','" + Genero + "','" + Sinopse +
+                        "', '" + Duracao + "', '" + Lancamento + "', '" + Direcao + "'";
                     MySqlCommand insertt = new MySqlCommand(InsComand, connecta);
                     insertt.ExecuteNonQuery();
 

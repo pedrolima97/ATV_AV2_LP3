@@ -19,8 +19,6 @@ namespace Fletnix
 
         static public string cod_tittle;
         static string tipo;
-        Funcoes.FilmeSerie tittle = new Funcoes.FilmeSerie();
-
 
         private void Editar_Load(object sender, EventArgs e)
         {
@@ -34,14 +32,15 @@ namespace Fletnix
             {
                 tipo = "serie";
             }
+
             Funcoes.BuscaBD.Buscar(cod_tittle, tipo);
 
-            txt_titulo.Text = tittle.Nome;
+            txt_titulo.Text = Dados.FilmeSerie.tittle.Titulo;
         }
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            tittle.Nome = txt_titulo.Text;
+            Dados.FilmeSerie.tittle.Titulo = txt_titulo.Text;
             Funcoes.UpdateBD.Update(cod_tittle, tipo);
         }
     }

@@ -60,6 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dados\DAO_conn.cs" />
+    <Compile Include="Formularios\Avisos\Avisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Avisos\Avisos.Designer.cs">
+      <DependentUpon>Avisos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Cadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,7 +94,7 @@
     <Compile Include="Funcoes\DeleteBD.cs" />
     <Compile Include="Funcoes\InsertBD.cs" />
     <Compile Include="Funcoes\ReaderDGV.cs" />
-    <Compile Include="Funcoes\FilmeSerie.cs" />
+    <Compile Include="Dados\FilmeSerie.cs" />
     <Compile Include="Funcoes\UpdateBD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,6 +110,12 @@
     <Compile Include="Formularios\Ver.Designer.cs">
       <DependentUpon>Ver.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formularios\Cadastrar.resx">
+      <DependentUpon>Cadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Listar.resx">
       <DependentUpon>Listar.cs</DependentUpon>
     </EmbeddedResource>

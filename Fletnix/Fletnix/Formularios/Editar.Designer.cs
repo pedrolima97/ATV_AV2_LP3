@@ -33,7 +33,7 @@
             this.txt_titulo = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_save = new System.Windows.Forms.Button();
+            this.salvar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_titulo
@@ -57,25 +57,25 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Titulo";
             // 
-            // btn_save
+            // salvar
             // 
-            this.btn_save.Image = ((System.Drawing.Image)(resources.GetObject("btn_save.Image")));
-            this.btn_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_save.Location = new System.Drawing.Point(211, 226);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(61, 23);
-            this.btn_save.TabIndex = 3;
-            this.btn_save.Text = "Salvar";
-            this.btn_save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            this.salvar.Font = new System.Drawing.Font("Montserrat", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salvar.Image = ((System.Drawing.Image)(resources.GetObject("salvar.Image")));
+            this.salvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.salvar.Location = new System.Drawing.Point(195, 221);
+            this.salvar.Name = "salvar";
+            this.salvar.Size = new System.Drawing.Size(77, 28);
+            this.salvar.TabIndex = 5;
+            this.salvar.Text = "Salvar";
+            this.salvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.salvar.UseVisualStyleBackColor = true;
             // 
             // Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.salvar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_titulo);
             this.Name = "Editar";
@@ -91,6 +91,6 @@
         private System.Windows.Forms.TextBox txt_titulo;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button salvar;
     }
 }

@@ -11,7 +11,7 @@ namespace Fletnix.Funcoes
     {
         static public void Select(string cod_tittle, string tipo)
         {
-            FilmeSerie tittle = new FilmeSerie();
+            Dados.FilmeSerie tittle = new Dados.FilmeSerie();
             using (MySqlConnection connecta = Dados.DAO_conn.getSqlConnection())
                 try
                 {

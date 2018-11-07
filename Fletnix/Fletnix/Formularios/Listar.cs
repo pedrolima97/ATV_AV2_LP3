@@ -25,7 +25,14 @@ namespace Fletnix
         private void button1_Click(object sender, EventArgs e)
         {
             Ver visu = new Ver();
+            visu.cod_tittle = textBox1.Text;
             visu.ShowDialog();
+        }
+
+        private void adicionarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cadastrar _cadastrar = new Cadastrar();
+            _cadastrar.ShowDialog();
         }
     }
 }

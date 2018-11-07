@@ -4576,6 +4576,9 @@
         E6/wD14eo9/x4ev8PH+Aez/HuvR5PZPg9T+bq/xMz0vbH+RTpDue1//Z
 </value>
   </data>
+  <data name="lbl_sinopse.Text" xml:space="preserve">
+    <value>Quatro adolescentes encontram um videogame cuja ação se passa em uma floresta tropical. Empolgados com o jogo, eles escolhem seus avatares para o desafio, mas um evento inesperado faz com que eles sejam transportados para dentro do universo fictício, transformando-os nos personagens da aventura.</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIAA7QwAAZgAAAICAAAABACAAKAgBAKFDAABAQAAAAQAgAChCAADJSwEAMDAAAAEA

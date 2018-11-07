@@ -11,8 +11,7 @@ namespace Fletnix.Funcoes
     {
         static public void Buscar(string cod_tittle, string tipo)
         {
-            FilmeSerie tittle = new FilmeSerie();
-            using (MySqlConnection connecta = Dados.DAO_conn.getSqlConnection())
+                using (MySqlConnection connecta = Dados.DAO_conn.getSqlConnection())
                 try
                 {
                     string table = "";
@@ -32,19 +31,20 @@ namespace Fletnix.Funcoes
                     MySqlDataReader tittlee = buscaa.ExecuteReader();
 
                     tittlee.Read();
-                    tittle.Nome = tittlee["titulo"].ToString();
-                    tittle.Produtora = tittlee["produtora"].ToString();
-                    tittle.Genero = tittlee["genero"].ToString();
-                    tittle.Sinopse = tittlee["sinopse"].ToString();
-                    tittle.Duracao = tittlee["duracao"].ToString();
-                    tittle.Lancamento = Convert.ToInt32(tittlee["lancamento"]);
-                    tittle.Direcao = tittlee["direcao"].ToString();
+
+                    Dados.FilmeSerie.tittle.Titulo = tittlee["titulo"].ToString();
+                    Dados.FilmeSerie.tittle.Produtora = tittlee["produtora"].ToString();
+                    Dados.FilmeSerie.tittle.Genero = tittlee["genero"].ToString();
+                    Dados.FilmeSerie.tittle.Sinopse = tittlee["sinopse"].ToString();
+                    Dados.FilmeSerie.tittle.Duracao = tittlee["duracao"].ToString();
+                    Dados.FilmeSerie.tittle.Lancamento = Convert.ToInt32(tittlee["lancamento"]);
+                    Dados.FilmeSerie.tittle.Direcao = tittlee["direcao"].ToString();
 
                 }
 
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Erro:" + ex.Message);
+                    throw;
                 }
 
                 finally

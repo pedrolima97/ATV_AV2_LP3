@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace Fletnix
 {
+    
     static class Program
     {
         public static char time = '0';

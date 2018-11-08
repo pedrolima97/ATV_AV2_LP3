@@ -43,7 +43,7 @@ namespace Fletnix.Funcoes
 
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Erro:" + ex.Message);
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
                 }
 
                 finally

@@ -9,6 +9,7 @@ namespace Fletnix.Funcoes
 {
     class BuscaBD
     {
+        public static bool status = false;
         static public void Buscar(string cod_tittle, string tipo)
         {
                 using (MySqlConnection connecta = Dados.DAO_conn.getSqlConnection())
@@ -40,11 +41,14 @@ namespace Fletnix.Funcoes
                     Dados.FilmeSerie.tittle.Lancamento = Convert.ToInt32(tittlee["lancamento"]);
                     Dados.FilmeSerie.tittle.Direcao = tittlee["direcao"].ToString();
 
+                    status = true;
+
                 }
 
                 catch (Exception ex)
                 {
-                    throw;
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                    status = false;
                 }
 
                 finally

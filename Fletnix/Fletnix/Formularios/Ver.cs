@@ -18,26 +18,12 @@ namespace Fletnix
             InitializeComponent();
         }
 
-        public string cod_tittle;
-        static string tipo;
+        public string tipo;
         
         private void Ver_Load(object sender, EventArgs e)
         {
-            char tp_tt = cod_tittle[0];
-            if (tp_tt == 'F')
-            {
-                tipo = "filme";
-            }
-
-            else if (tp_tt == 'S')
-            {
-                tipo = "serie";
-            }
-
-            Funcoes.BuscaBD.Buscar(cod_tittle, tipo);
-
+            this.Text = "Informações sobre "+tipo;
             
-
             lbl_titulo.Text = Dados.FilmeSerie.tittle.Titulo;
             lbl_lancamento.Text = Convert.ToString(Dados.FilmeSerie.tittle.Lancamento);
             lbl_duracao.Text = Dados.FilmeSerie.tittle.Duracao;

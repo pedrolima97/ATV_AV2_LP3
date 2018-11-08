@@ -9,6 +9,7 @@ namespace Fletnix.Funcoes
 {
     class ReaderDGV
     {
+        public static bool status = false;
         static public void Select(string cod_tittle, string tipo)
         {
             Dados.FilmeSerie tittle = new Dados.FilmeSerie();
@@ -30,12 +31,14 @@ namespace Fletnix.Funcoes
                     string InsComand = "SELECT titulo, produtora, genero, sinopse, duracao, lancamento, direcao FROM " + table + " WHERE cod_titulo='" + cod_tittle + "'";
                     MySqlCommand buscaa = new MySqlCommand(InsComand, connecta);
                     MySqlDataReader tittlee = buscaa.ExecuteReader();
+                    status = true;
 
                 }
 
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Erro:" + ex.Message);
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                    status = false;
                 }
 
                 finally

@@ -12,6 +12,8 @@ namespace Fletnix
 {
     public partial class Listar : Form
     {
+        public static string tipo;
+        public static string cod_tittle;
         public Listar()
         {
             InitializeComponent();
@@ -22,11 +24,43 @@ namespace Fletnix
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_ver_Click(object sender, EventArgs e)
         {
-            Ver visu = new Ver();
-            visu.cod_tittle = textBox1.Text;
-            visu.ShowDialog();
+            try
+            {
+                Ver visu = new Ver();
+                cod_tittle = textBox1.Text;
+                char tp_tt = cod_tittle[0];
+                if (tp_tt == 'F')
+                {
+                    tipo = "filme";
+                    visu.tipo = "o filme";
+                }
+
+                else if (tp_tt == 'S')
+                {
+                    tipo = "serie";
+                    visu.tipo = "a série";
+                }
+
+                Funcoes.BuscaBD.Buscar(cod_tittle, tipo);
+
+                if (Funcoes.BuscaBD.status)
+                {
+                    visu.ShowDialog();
+                }
+
+                else
+                {
+                    return;
+                }
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void adicionarToolStripMenuItem_Click(object sender, EventArgs e)

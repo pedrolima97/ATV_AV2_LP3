@@ -4,12 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fletnix
+namespace Fletnix.Formularios
 {
     public partial class Ver : Form
     {
@@ -31,6 +32,15 @@ namespace Fletnix
             lbl_direcao.Text = Dados.FilmeSerie.tittle.Direcao;
             lbl_produtora.Text = Dados.FilmeSerie.tittle.Produtora;
             lbl_sinopse.Text = Dados.FilmeSerie.tittle.Sinopse;
+            Bitmap bmp = new Bitmap(Application.StartupPath.ToString() + "\\Cartazz\\" + Dados.FilmeSerie.tittle.Cartaz + ".bmp");
+            picture_cartaz.Image = bmp;
+        }
+
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            Editar _editar = new Editar();
+            _editar.cod_tittle = Dados.FilmeSerie.tittle.Cod;
+            _editar.tipo = Dados.FilmeSerie.tittle.Tipo;
         }
     }
 }

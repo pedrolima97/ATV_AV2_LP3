@@ -15,6 +15,7 @@ namespace Fletnix.Dados
         private string direcao;
         private string genero;
         private string produtora;
+        private string cartaz;
 
         public string Tipo;
         public string Cod;
@@ -25,6 +26,7 @@ namespace Fletnix.Dados
         public string Direcao { get { return direcao; } set { direcao = value; } }
         public string Genero { get { return genero; } set { genero = value; } }
         public string Produtora { get { return produtora; } set { produtora = value; } }
+        public string Cartaz { get { return cartaz; } set { cartaz = value; } }
 
         //retornar imagem do bd
 

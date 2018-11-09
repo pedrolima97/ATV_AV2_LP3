@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 
-namespace Fletnix
+namespace Fletnix.Formularios
 {
     public partial class Editar : Form
     {
@@ -17,31 +13,22 @@ namespace Fletnix
             InitializeComponent();
         }
 
-        static public string cod_tittle;
-        static string tipo;
+        public string cod_tittle, tipo;
 
-        private void Editar_Load(object sender, EventArgs e)
+        private void Ver_Load(object sender, EventArgs e)
         {
-            char tp_tt = cod_tittle[0];
-            if (tp_tt == 'F')
-            {
-                tipo = "filme";
-            }
-
-            else if (tp_tt == 'S')
-            {
-                tipo = "serie";
-            }
-
-            Funcoes.BuscaBD.Buscar(cod_tittle, tipo);
-
-            txt_titulo.Text = Dados.FilmeSerie.tittle.Titulo;
+            this.Text = "Editar Título";
         }
 
-        private void btn_save_Click(object sender, EventArgs e)
+        private void btn_buscaimg_Click(object sender, EventArgs e)
         {
-            Dados.FilmeSerie.tittle.Titulo = txt_titulo.Text;
-            Funcoes.UpdateBD.Update(cod_tittle, tipo);
+
+        }
+
+        private void btn_salvar_Click(object sender, EventArgs e)
+        {
+            
+               
         }
     }
 }

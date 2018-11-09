@@ -1,4 +1,4 @@
-﻿namespace Fletnix
+﻿namespace Fletnix.Formularios
 {
     partial class Menu
     {

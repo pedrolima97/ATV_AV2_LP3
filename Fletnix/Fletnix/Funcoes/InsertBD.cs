@@ -17,12 +17,12 @@ namespace Fletnix.Funcoes
                     string Tipo = Dados.FilmeSerie.tittle.Tipo;
                     string table = "";
                     connecta.Open();
-                    if (Tipo == "serie")
+                    if (Tipo == "S")
                     {
                         table = "series";
                     }
 
-                    else if (Tipo == "filme")
+                    else if (Tipo == "F")
                     {
                         table = "filmes";
                     }
@@ -35,10 +35,11 @@ namespace Fletnix.Funcoes
                     string Duracao = Dados.FilmeSerie.tittle.Duracao;
                     int Lancamento = Dados.FilmeSerie.tittle.Lancamento;
                     string Direcao = Dados.FilmeSerie.tittle.Direcao;
+                    string Cartaz = Dados.FilmeSerie.tittle.Cartaz;
 
-                    string InsComand = "INSERT INTO " + table + " (cod_titulo ,titulo, produtora, genero, sinopse, duracao, lancamento, direcao)" +
-                        "VALUES('" + Cod + "','" + Titulo + "','" + Produtora + "','" + Genero + "','" + Sinopse +
-                        "', '" + Duracao + "', '" + Lancamento + "', '" + Direcao + "'";
+                    
+                    string InsComand = "INSERT INTO " + table + " (cod_titulo ,titulo, produtora, genero, sinopse, duracao, lancamento, direcao, folder)" +
+                        " VALUES ('" + Cod + "','" + Titulo + "','" + Produtora + "','" + Genero + "','" + Sinopse +"', '" + Duracao + "', '" + Lancamento + "', '" + Direcao + "','"+ Cartaz +"')";
                     MySqlCommand insertt = new MySqlCommand(InsComand, connecta);
                     insertt.ExecuteNonQuery();
 

@@ -1,4 +1,4 @@
-﻿namespace Fletnix
+﻿namespace Fletnix.Funcoes
 {
     partial class Splash
     {

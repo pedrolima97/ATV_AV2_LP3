@@ -27,12 +27,14 @@ namespace Fletnix.Funcoes
                         table = "filmes";
                     }
 
-                    string InsComand = "SELECT titulo, produtora, genero, sinopse, duracao, lancamento, direcao FROM " + table + " WHERE cod_titulo='" + cod_tittle + "'";
+                    string InsComand = "SELECT titulo, produtora, genero, sinopse, duracao, lancamento, direcao, folder FROM " + table + " WHERE cod_titulo='" + cod_tittle + "'";
                     MySqlCommand buscaa = new MySqlCommand(InsComand, connecta);
                     MySqlDataReader tittlee = buscaa.ExecuteReader();
 
                     tittlee.Read();
 
+                    Dados.FilmeSerie.tittle.Cod = cod_tittle;
+                    Dados.FilmeSerie.tittle.Tipo = tipo;
                     Dados.FilmeSerie.tittle.Titulo = tittlee["titulo"].ToString();
                     Dados.FilmeSerie.tittle.Produtora = tittlee["produtora"].ToString();
                     Dados.FilmeSerie.tittle.Genero = tittlee["genero"].ToString();
@@ -40,6 +42,7 @@ namespace Fletnix.Funcoes
                     Dados.FilmeSerie.tittle.Duracao = tittlee["duracao"].ToString();
                     Dados.FilmeSerie.tittle.Lancamento = Convert.ToInt32(tittlee["lancamento"]);
                     Dados.FilmeSerie.tittle.Direcao = tittlee["direcao"].ToString();
+                    Dados.FilmeSerie.tittle.Cartaz = tittlee["folder"].ToString();
 
                     status = true;
 

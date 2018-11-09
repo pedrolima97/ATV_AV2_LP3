@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fletnix
+namespace Fletnix.Formularios
 {
     
     static class Program
@@ -21,7 +21,7 @@ namespace Fletnix
             Application.SetCompatibleTextRenderingDefault(false);
             
             //Tela de inicio
-            Splash _splash = new Splash();
+            Funcoes.Splash _splash = new Funcoes.Splash();
             _splash.Show();
             Application.Run();
                         

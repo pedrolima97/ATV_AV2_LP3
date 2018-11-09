@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fletnix
+namespace Fletnix.Formularios
 {
     public partial class Listar : Form
     {

@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fletnix
+namespace Fletnix.Funcoes
 {
     public partial class Splash : Form
     {
@@ -29,7 +29,7 @@ namespace Fletnix
                 timer1.Enabled = false;
                 Dispose();
 
-                Menu _menu = new Menu();
+                Formularios.Menu _menu = new Formularios.Menu();
                 _menu.Show();
             }
         }

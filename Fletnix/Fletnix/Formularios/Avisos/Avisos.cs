@@ -16,5 +16,10 @@ namespace Fletnix.Formularios.Avisos
         {
             InitializeComponent();
         }
+
+        private void Avisos_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Teste");
+        }
     }
 }

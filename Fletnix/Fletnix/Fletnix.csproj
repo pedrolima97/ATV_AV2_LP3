@@ -110,6 +110,9 @@
     <Compile Include="Formularios\Ver.Designer.cs">
       <DependentUpon>Ver.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formularios\Avisos\Avisos.resx">
+      <DependentUpon>Avisos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
     </EmbeddedResource>

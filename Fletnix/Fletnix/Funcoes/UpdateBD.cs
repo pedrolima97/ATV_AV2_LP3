@@ -33,10 +33,11 @@ namespace Fletnix.Funcoes
                     string Duracao = Dados.FilmeSerie.tittle.Duracao;
                     int Lancamento = Dados.FilmeSerie.tittle.Lancamento;
                     string Direcao = Dados.FilmeSerie.tittle.Direcao;
+                    string Cartaz = Dados.FilmeSerie.tittle.Cartaz;
 
                     string InsComand = "UPDATE " + table + " SET titulo = '" + Titulo + "', produtora = '" + Produtora + "', genero = '" + Genero +
                     "', sinopse = '" + Sinopse + "', duracao =  '" + Duracao + "', lancamento = '" + Lancamento +
-                    "', direcao = '" + Direcao + " WHERE cod_titulo = '" + cod_tittle + "'";
+                    "', direcao = '" + Direcao + "', folder = '"+ Cartaz +"' WHERE cod_titulo = '" + cod_tittle + "'";
                     MySqlCommand updatee = new MySqlCommand(InsComand, connecta);
                     updatee.ExecuteNonQuery();
                 }

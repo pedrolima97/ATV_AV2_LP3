@@ -41,6 +41,7 @@ namespace Fletnix.Formularios
             Editar _editar = new Editar();
             _editar.cod_tittle = Dados.FilmeSerie.tittle.Cod;
             _editar.tipo = Dados.FilmeSerie.tittle.Tipo;
+            _editar.ShowDialog();
         }
     }
 }

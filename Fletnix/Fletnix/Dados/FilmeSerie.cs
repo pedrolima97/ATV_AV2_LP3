@@ -31,8 +31,5 @@ namespace Fletnix.Dados
         //retornar imagem do bd
 
         public static FilmeSerie tittle = new FilmeSerie();
-        
-
-
     }
 }

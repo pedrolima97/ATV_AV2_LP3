@@ -9,6 +9,8 @@ namespace Fletnix.Funcoes
 {
     class InsertBD
     {
+        static public bool sucess = false;
+
         static public void Insert()
         {
                 using (MySqlConnection connecta = Dados.DAO_conn.getSqlConnection())
@@ -41,7 +43,13 @@ namespace Fletnix.Funcoes
                     string InsComand = "INSERT INTO " + table + " (cod_titulo ,titulo, produtora, genero, sinopse, duracao, lancamento, direcao, folder)" +
                         " VALUES ('" + Cod + "','" + Titulo + "','" + Produtora + "','" + Genero + "','" + Sinopse +"', '" + Duracao + "', '" + Lancamento + "', '" + Direcao + "','"+ Cartaz +"')";
                     MySqlCommand insertt = new MySqlCommand(InsComand, connecta);
-                    insertt.ExecuteNonQuery();
+
+                    int i = insertt.ExecuteNonQuery();
+
+                    if (i == 1)
+                    {
+                        sucess = true;
+                    }
 
                 }
 
@@ -54,6 +62,11 @@ namespace Fletnix.Funcoes
                 {
                     connecta.Close();
                 }
+        }
+
+        public static bool Resposta()
+        {
+            return sucess;
         }
     }
 }

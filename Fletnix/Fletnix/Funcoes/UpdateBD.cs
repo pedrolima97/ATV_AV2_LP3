@@ -9,6 +9,7 @@ namespace Fletnix.Funcoes
 {
     class UpdateBD
     {
+        static public bool sucess = false;
         static public void Update(string cod_tittle, string tipo)
         {
                 using (MySqlConnection connecta = Dados.DAO_conn.getSqlConnection())
@@ -39,7 +40,13 @@ namespace Fletnix.Funcoes
                     "', sinopse = '" + Sinopse + "', duracao =  '" + Duracao + "', lancamento = '" + Lancamento +
                     "', direcao = '" + Direcao + "', folder = '"+ Cartaz +"' WHERE cod_titulo = '" + cod_tittle + "'";
                     MySqlCommand updatee = new MySqlCommand(InsComand, connecta);
-                    updatee.ExecuteNonQuery();
+                    
+                    int i = updatee.ExecuteNonQuery();
+
+                    if (i == 1)
+                    {
+                        sucess = true;
+                    }
                 }
 
                 catch (Exception ex)
@@ -51,6 +58,11 @@ namespace Fletnix.Funcoes
                 {
                     connecta.Close();
                 }
+        }
+
+        public static bool Resposta()
+        {
+            return sucess;
         }
     }
 }

@@ -43,5 +43,30 @@ namespace Fletnix.Formularios
             _editar.tipo = Dados.FilmeSerie.tittle.Tipo;
             _editar.ShowDialog();
         }
+
+        private void btn_remove_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Funcoes.DeleteBD.Delete(Dados.FilmeSerie.tittle.Cod, Dados.FilmeSerie.tittle.Tipo);
+            }
+
+            catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+
+            finally
+            {
+                if (Funcoes.DeleteBD.Resposta())
+                {
+                    MessageBox.Show("Título removido com sucesso");
+                    this.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("Erro");
+                }
+            }
+        }
     }
 }

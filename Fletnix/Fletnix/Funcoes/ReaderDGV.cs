@@ -7,44 +7,31 @@ using System.Threading.Tasks;
 
 namespace Fletnix.Funcoes
 {
-    class ReaderDGV
+    sealed class ReaderDGV
     {
-        public static bool status = false;
-        static public void Select(string cod_tittle, string tipo)
+        static private MySqlDataReader tittlee = null;
+
+        static public MySqlDataReader GetDataReader()
         {
-            Dados.FilmeSerie tittle = new Dados.FilmeSerie();
             using (MySqlConnection connecta = Dados.DAO_conn.getSqlConnection())
                 try
                 {
-                    string table = "";
                     connecta.Open();
-                    if (tipo == "serie")
-                    {
-                        table = "series";
-                    }
-
-                    else if (tipo == "filme")
-                    {
-                        table = "filmes";
-                    }
-
-                    string InsComand = "SELECT titulo, produtora, genero, sinopse, duracao, lancamento, direcao FROM " + table + " WHERE cod_titulo='" + cod_tittle + "'";
+                    string InsComand = "SELECT cod_titulo, titulo FROM filmes";
                     MySqlCommand buscaa = new MySqlCommand(InsComand, connecta);
-                    MySqlDataReader tittlee = buscaa.ExecuteReader();
-                    status = true;
-
+                    tittlee = buscaa.ExecuteReader();
                 }
 
                 catch (Exception ex)
                 {
                     System.Windows.Forms.MessageBox.Show(ex.Message);
-                    status = false;
                 }
 
                 finally
                 {
                     connecta.Close();
                 }
+            return tittlee;
         }
     }
 }

@@ -260,6 +260,7 @@
             this.btn_remove.Text = "Remover";
             this.btn_remove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_remove.UseVisualStyleBackColor = true;
+            this.btn_remove.Click += new System.EventHandler(this.btn_remove_Click);
             // 
             // Ver
             // 

@@ -89,7 +89,20 @@ namespace Fletnix.Formularios
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }  
+            }
+
+            finally
+            {
+                if (Funcoes.UpdateBD.Resposta())
+                {
+                    MessageBox.Show("Título inserido com sucesso");
+                    this.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("Erro");
+                }
+            }
         }
     }
 }

@@ -46,7 +46,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_sinopse = new System.Windows.Forms.TextBox();
             this.btn_salvar = new System.Windows.Forms.Button();
-            this.btn_buscaimg = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.picture_cartaz)).BeginInit();
             this.panel1.SuspendLayout();
@@ -258,23 +257,6 @@
             this.btn_salvar.UseVisualStyleBackColor = false;
             this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
             // 
-            // btn_buscaimg
-            // 
-            this.btn_buscaimg.BackColor = System.Drawing.Color.White;
-            this.btn_buscaimg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_buscaimg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_buscaimg.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_buscaimg.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscaimg.Image")));
-            this.btn_buscaimg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_buscaimg.Location = new System.Drawing.Point(93, 297);
-            this.btn_buscaimg.Name = "btn_buscaimg";
-            this.btn_buscaimg.Size = new System.Drawing.Size(122, 28);
-            this.btn_buscaimg.TabIndex = 13;
-            this.btn_buscaimg.Text = "Bucar Cartaz";
-            this.btn_buscaimg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_buscaimg.UseVisualStyleBackColor = false;
-            this.btn_buscaimg.Click += new System.EventHandler(this.btn_buscaimg_Click);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -285,7 +267,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(651, 367);
-            this.Controls.Add(this.btn_buscaimg);
             this.Controls.Add(this.btn_salvar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -322,7 +303,6 @@
         private System.Windows.Forms.TextBox txt_distrib;
         private System.Windows.Forms.TextBox txt_sinopse;
         private System.Windows.Forms.Button btn_salvar;
-        private System.Windows.Forms.Button btn_buscaimg;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

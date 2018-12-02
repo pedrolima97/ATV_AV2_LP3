@@ -58,27 +58,46 @@ namespace Fletnix.Formularios
                     Random cood = new Random();
                     int cod = cood.Next(0000, 9999);
 
-                    if (sel_tipo.Text == "Filme") { tipo = "F"; }
-                    else if (sel_tipo.Text == "Série") { tipo = "S"; }
+                    char tp = char.ToUpper(sel_tipo.Text[0]);
 
-                    string cartaz = "IMG_" + tipo + cod.ToString();
+                    switch (tp)
+                    {
+                        case 'F':
+                            tipo = "F";
+                            Inserir();
+                            break;
 
-                    Dados.FilmeSerie.tittle.Tipo = tipo;
-                    Dados.FilmeSerie.tittle.Cod = tipo + Convert.ToString(cod);
-                    Dados.FilmeSerie.tittle.Titulo = txt_titulo.Text;
-                    Dados.FilmeSerie.tittle.Sinopse = txt_sinopse.Text;
-                    Dados.FilmeSerie.tittle.Duracao = txt_duracao.Text;
-                    Dados.FilmeSerie.tittle.Lancamento = Convert.ToInt32(txt_lancamento.Text);
-                    Dados.FilmeSerie.tittle.Direcao = txt_direcao.Text;
-                    Dados.FilmeSerie.tittle.Genero = txt_genero.Text;
-                    Dados.FilmeSerie.tittle.Produtora = txt_distrib.Text;
-                    Dados.FilmeSerie.tittle.Cartaz = cartaz;
+                        case 'S':
+                            tipo = "S";
+                            Inserir();
+                            break;
 
-                    Funcoes.InsertBD.Insert();
+                        default:
+                            MessageBox.Show("Opção inválida para tipo de título");
+                            sel_tipo.Focus();
+                            break;
+                    }
 
-                    picture_cartaz.Image.Save(Application.StartupPath.ToString() + "\\Cartazz\\" + cartaz + ".bmp", ImageFormat.Bmp);
+                    void Inserir()
+                    {
+                        string cartaz = "IMG_" + tipo + cod.ToString();
 
-                    
+                        Dados.FilmeSerie.tittle.Tipo = tipo;
+                        Dados.FilmeSerie.tittle.Cod = tipo + Convert.ToString(cod);
+                        Dados.FilmeSerie.tittle.Titulo = txt_titulo.Text;
+                        Dados.FilmeSerie.tittle.Sinopse = txt_sinopse.Text;
+                        Dados.FilmeSerie.tittle.Duracao = txt_duracao.Text;
+                        Dados.FilmeSerie.tittle.Lancamento = Convert.ToInt32(txt_lancamento.Text);
+                        Dados.FilmeSerie.tittle.Direcao = txt_direcao.Text;
+                        Dados.FilmeSerie.tittle.Genero = txt_genero.Text;
+                        Dados.FilmeSerie.tittle.Produtora = txt_distrib.Text;
+                        Dados.FilmeSerie.tittle.Cartaz = cartaz;
+
+                        Funcoes.InsertBD.Insert();
+
+                        picture_cartaz.Image.Save(Application.StartupPath.ToString() + "\\Cartazz\\" + cartaz + ".bmp", ImageFormat.Bmp);
+
+                    }
 
                 }
             }

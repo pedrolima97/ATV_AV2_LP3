@@ -95,7 +95,7 @@ namespace Fletnix.Formularios
             {
                 if (Funcoes.UpdateBD.Resposta())
                 {
-                    MessageBox.Show("Título inserido com sucesso");
+                    MessageBox.Show("Título atualizado com sucesso");
                     this.Dispose();
                 }
                 else

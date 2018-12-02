@@ -58,8 +58,8 @@ namespace Fletnix.Formularios
                     Random cood = new Random();
                     int cod = cood.Next(0000, 9999);
 
-                    if (sel_tipo.Text == "Filme") { tipo = "F"; }
-                    else if (sel_tipo.Text == "Série") { tipo = "S"; }
+                    if ((sel_tipo.Text == "Filme") || (sel_tipo.Text == "filme")) { tipo = "F"; }
+                    else if ((sel_tipo.Text == "Série") || (sel_tipo.Text == "Serie")) { tipo = "S"; }
 
                     string cartaz = "IMG_" + tipo + cod.ToString();
 
